@@ -13,25 +13,6 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json());
 
 /*ROUTE*/
-app.get('/api/v1/tours/:id', (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    data: {
-      from: 'second',
-    },
-  });
-});
-
-app.get('/api/v1/tours/:id/:gender?', (req, res, next) => {
-  res.status(200).json({
-    status: 'success',
-    data: {
-      from: 'first',
-    },
-  });
-  next();
-});
-
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
